@@ -16,7 +16,10 @@ class DesenvolvedorController
     {
         try {
             $desenvolvedor = new Desenvolvedor();
-            return $desenvolvedor->getTodos();
+            $registros = $desenvolvedor->getTodos();
+            http_response_code(200);
+            $result = array('status'=>200,'data'=>$registros);
+            return $result;
             //include_once(__DIR__ ."/../view/desenvolvedorList.php");
         } catch (Exception $e) {
             throw new Exception("Error Processing Request:".$e->getMessage(), 1);
@@ -39,11 +42,15 @@ class DesenvolvedorController
     }
 
     public function salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento){
+
         try {
             $desenvolvedor = new Desenvolvedor();
-            return $desenvolvedor->salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento);
+            $registro =  $desenvolvedor->salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento);
+            http_response_code(201);
+            $result = array('status'=>201,'data'=>$registro);
+            return $result;
         } catch (Exception $e) {
-            throw new Exception("Error Processing Request:".$e->getMessage(), 1);
+            throw new Exception($e->getMessage(), $e->getCode());
         }
     }
 
@@ -52,7 +59,7 @@ class DesenvolvedorController
             $desenvolvedor = new Desenvolvedor();
             return $desenvolvedor->eliminar($desenvolvedorId);
         } catch (Exception $e) {
-            throw new Exception("Error Processing Request:".$e->getMessage(), 1);
+            throw new Exception($e->getMessage(),$e->getCode());
         }
     }
 }   

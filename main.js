@@ -48,13 +48,13 @@ var result_val = true;
          }
 
          var texto_textarea = $('#developer_hobby').val();
-         console.log("texto_textatea"+texto_textarea);
+         //console.log("texto_textatea"+texto_textarea);
          if(texto_textarea.trim().length > 0){
             $('#developer_hobby').addClass('is-valid');
             $('#developer_hobby').addClass('valid');
             $('#developer_hobby').removeClass('is-invalid');
             $('#developer_hobby').removeClass('invalid');
-            console.log("validado ok texto_textatea");
+            //console.log("validado ok texto_textatea");
          }else{
             $('.caracteres').text('255');
             $('#developer_hobby').val('');
@@ -223,9 +223,17 @@ $('#formDesenvolvedor').submit(function(e){
          url: "desenvolvedorAction.php",
          type: "POST",
          //contentType: "application/json; charset=utf-8",
-         datatype:"json",    
+         dataType:'json',    
          data:data_entrada,   
          success: function(data) {
+           console.log(data);
+           //data = JSON.parse(data);
+           console.log(data.length);
+           //if(data[0].length == 0 ){
+           if(data.length == 0 ){ 
+            //alert("Erro ao salvar. Codigo: "+data[1]);
+            alert("Erro ao salvar. Codigo: 400");
+           }
            /*
            data = JSON.parse(data);
            //console.log(data);
@@ -241,7 +249,11 @@ $('#formDesenvolvedor').submit(function(e){
            */
            tabelaDesenvolvedores.ajax.reload(null, false);
 
-         }
+         },
+          error: function (xhr, ajaxOptions, thrownError) {
+            alert('Erro ao salvar. Status:'+xhr.status+' '+thrownError);
+            //alert(thrownError);
+          }
        });
        $('#formDesenvolvedor').trigger('reset');
        $('#formDesenvolvedor').removeClass('was-validated');
@@ -300,7 +312,7 @@ $(document).on("click", ".btnEliminar", function(){
         $.ajax({
           url: "desenvolvedorAction.php",
           type: "POST",
-          datatype:"json",    
+          dataType:"json",    
           data: {desenvolvedorId:user_id, acao:"eliminar"},    
           success: function() {
               tabelaDesenvolvedores.row(fila.parents('tr')).remove().draw();                  
