@@ -30,8 +30,8 @@ include_once(__DIR__."/../superior.php");
               </tr>
           </thead>
           <tbody>
-            <?php                            
-            //foreach($data as $dat) {                                
+            <?php
+            //foreach($data as $dat) {
             ?>
             <!--
             <tr>
@@ -40,7 +40,7 @@ include_once(__DIR__."/../superior.php");
                 <td><?php // echo $dat['sexo'] ?></td>
                 <td><?php // echo $dat['idade'] ?></td>
                 <td><?php // echo $dat['hobby'] ?></td>
-                <td><?php // echo $dat['dataNascimento'] ?></td>   
+                <td><?php // echo $dat['dataNascimento'] ?></td>
                 <td></td>
             -->
             </tr>
@@ -60,9 +60,9 @@ include_once(__DIR__."/../superior.php");
               </tr>
           </tfoot>
         </table>
-      </div>  
+      </div>
     </div>
-  </div>         
+  </div>
 </div>
 <?php
 //print_r($dat);exit;
@@ -96,8 +96,8 @@ include_once(__DIR__."/../superior.php");
                   <option selected value="M">M</option>
                   <option value="F">F</option>
                 </select>
-              </div>  
-              <div class="form-group col-md-3">  
+              </div>
+              <div class="form-group col-md-3">
                 <label for="idade">Idade</label>
                 <input type="number" required min=10 max=75 value="10" class="form-control" id="developer_idade">
               </div>
@@ -117,12 +117,12 @@ include_once(__DIR__."/../superior.php");
             <div class="form-group">
               <label for="hobby">Hobby</label>
               <span class="caracteres">250</span> Restantes <br>
-              <textarea class="form-control is-invalid" id="developer_hobby" rows="3" minlength="1" maxlength="255" required>  
+              <textarea class="form-control is-invalid" id="developer_hobby" rows="3" minlength="1" maxlength="255" required>
               </textarea>
               <div class="invalid-feedback">
                  Por favor, digite o(s) hobby(s) com menos de 255 caracteres.
               </div>
-            </div>     
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

@@ -37,11 +37,13 @@ class DesenvolvedorController
         }
     }
 
-    public function mostrar(){
+    public function mostrar()
+    {
         include_once(__DIR__ ."/../view/desenvolvedorList.php");
     }
 
-    public function salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento){
+    public function salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento)
+    {
 
         try {
             $desenvolvedor = new Desenvolvedor();
@@ -54,7 +56,8 @@ class DesenvolvedorController
         }
     }
 
-    public function eliminar($desenvolvedorId){
+    public function eliminar($desenvolvedorId)
+    {
         try {
             $desenvolvedor = new Desenvolvedor();
             return $desenvolvedor->eliminar($desenvolvedorId);
@@ -62,4 +65,5 @@ class DesenvolvedorController
             throw new Exception($e->getMessage(),$e->getCode());
         }
     }
-}   
+}
+

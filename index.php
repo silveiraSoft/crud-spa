@@ -11,4 +11,3 @@ include_once("superior.php");
 </div>
 <?php
 include_once("inferior.php");
-?>
