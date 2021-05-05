@@ -45,7 +45,8 @@ class DesenvolvedorController
     public function salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento)
     {
 
-        try {
+        try
+        {
             $desenvolvedor = new Desenvolvedor();
             $registro =  $desenvolvedor->salvar($desenvolvedorId, $nome, $sexo, $idade, $hobby, $dataNascimento);
             http_response_code(201);

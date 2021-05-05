@@ -22,7 +22,7 @@
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Name1</th>
                 <th>Position</th>
                 <th>Office</th>
                 <th>Age</th>
@@ -507,7 +507,7 @@
     <script src="/download/lib/datatables/datatables.min.js"></script>
     <!--
     <script src="/download/lib/datatables/jquery-3.5.1.js"></script>
-    
+
     <script src="/download/lib/datatables/jquery.dataTables.min.js"></script>
     <script src="/download/lib/datatables/dataTables.bootstrap4.min.js"></script>
     -->
